@@ -1,0 +1,68 @@
+*
+  margin: 0
+  top: 0
+  left: 0
+body
+  width: 98vw
+  height: 100vh
+  display: flex
+  justify-content: space-around
+  background-image: linear-gradient( 151deg, #7834b0, rgba(0, 0, 0, 0.61))
+  align-items: center
+.main
+  position: relative
+  width: 550px
+  height: 590px
+  top: 10px
+  display: flex
+  justify-content: space-around
+  align-items: center
+  flex-direction: column
+  &_article
+    font-family: "My Soul", sans-serif
+    color: #E8B6FF
+  &_form
+    width: 350px
+    height: 450px
+    display: flex
+    z-index: 100
+    left: 6.4rem
+    top: 4rem
+    border-radius: 13px
+    position: absolute
+    backdrop-filter: blur(6px)
+    background: rgba(171, 114, 217, 0.50)
+    justify-content: space-around
+    align-items: center
+    flex-direction: column
+    &_sign
+      color: #C99FFF
+      cursor: pointer
+    &_input
+      width: 280px
+      height: 47px
+      background: rgba(217, 217, 217, 0.20)
+      color: white
+      border: 1px #BA97D6 solid
+      border-radius: 4px
+      outline: none
+    &_variant
+      width: 220px
+      height: 30px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      &_portal
+        color: #c99fff
+        cursor: pointer
+      &_line
+        width: 40px
+        height: 0.5px
+        background: #BA97D6
+
+.main_form_input::placeholder
+  color: white
+  font-family: 'Kameron', sans-serif
+
+a
+  text-decoration: none

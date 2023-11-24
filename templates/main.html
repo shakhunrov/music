@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="website icon" href="../static/img/logo.png">
+    <link rel="stylesheet" href="../static/style/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body  onload="myFunction()">
+<div id="loader">
+    <div class="spinner">
+     <div class="spinner1"></div>
+        </div>
+       <h1 class="spinner-text">Wait a few seconds</h1>
+</div>
+<div class="coverf">
+<div id="leftDIv" class="main_left">
+
+    <div class="main_left_headline">
+        <img class="main_left_headline_logo" src="../static/img/head.png" alt="">
+        <div class="main_left_headline_section">
+            <button class="main_left_headline_section_home">
+                <img class="main_left_headline_section_home_icon" src="../static/img/home.png" alt="">
+                <h3 class="main_left_headline_section_home_source">Home</h3>
+            </button>
+            <a href="{{ url_for('category') }}">
+                <button class="main_left_headline_section_home">
+                    <img class="main_left_headline_section_home_icon" src="../static/img/category.png" alt="">
+                    <h3 class="main_left_headline_section_home_source">Category</h3>
+                </button>
+            </a>
+            <a href="{{ url_for('search') }}">
+            <button class="main_left_headline_section_home">
+                <img class="main_left_headline_section_home_icon" src="../static/img/search.png" alt="">
+                <h3 class="main_left_headline_section_home_source">Search</h3>
+            </button>
+                </a>
+            <div class="main_left_headline_section_search"></div>
+        </div>
+    </div>
+    <div class="main_left_desk">
+        {% if playlists %}
+            <div class="main_left_desk_rows">
+                <button class="main_left_desk_rows_button">
+                    <div class="main_left_desk_rows_button_div">
+                        <img class="main_left_desk_rows_button_icon" src="../static/img/playlist.png" alt="">
+                        <h3 class="main_left_desk_rows_button_source">My playlist</h3>
+                    </div>
+                </button>
+                <i id="folderBtn" class="fa-solid fa-angle-down" style="z-index: 99;color: #573aa9;"></i>
+                <a id="open">
+                    <img class="main_left_desk_rows_addImg" src="../static/img/add.png" alt="">
+                </a>
+            </div>
+
+        {% else %}
+            <div class="main_left_desk_rows">
+                <button id="open" class="main_left_desk_rows_button">
+                    <div class="main_left_desk_rows_button_div">
+                        <img class="main_left_desk_rows_button_icon" src="../static/img/playlist.png" alt="">
+                        <h3 class="main_left_desk_rows_button_source">Add playlist</h3>
+                    </div>
+                </button>
+            </div>
+        {% endif %}
+        {% if playlists %}
+            <div id="rowDiv" class="anotherFolder">
+                {% for playlist in playlists %}
+                    <div class="main_left_desk_rows">
+                        <button class="main_left_desk_rows_button">
+                             <a href="{{ url_for('music', playlist_id=playlist.id) }}">
+                            <div class="main_left_desk_rows_button_div">
+                                <h3 class="main_left_desk_rows_button_source">{{ playlist.article }}</h3>
+                            </div>
+                             </a>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+
+        {% endif %}
+    </div>
+
+</div>
+<div id="rightDiv" class="main_right">
+    <div id="modal" class="main_right_playlistModal">
+        <div class="main_right_playlistModal_modal">
+            <form class="main_right_playlistModal_modal_form" action="{{ url_for('playlist') }}" method="post"
+                  enctype="multipart/form-data">
+                <span id="close" class="main_right_playlistModal_close"
+                      style="width: 36px; height: 36px; background-image: url(/static/img/close.png); background-size: cover; position: absolute; left: 22rem; top: 3px"></span>
+                <input class="modalMusic2_form2_input2" type="text" placeholder="Enter article"
+                       name="article">
+                <input class="modalMusic2_form2_input2" type="text" placeholder="Enter text"
+                       name="text">
+                <select class="modalMusic2_form2_input2" name="category_id">
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.category }}</option>
+                    {% endfor %}
+
+                    
+
+                </select>
+                <input class="modalMusic2_form2_input2" type="file" name="playimg"
+                       accept="multipart/form-data">
+
+                <button class="modalMusic2_form2_input2">Create</button>
+            </form>
+        </div>
+    </div>
+    <div class="main_right_nav">
+        <div class="main_right_nav_buttons">
+            <div class="main_right_nav_buttons_icon">
+                <div class="main_right_nav_buttons_icon_cover">
+                    <button class="main_right_nav_buttons_icon_cover_img"></button>
+                    <button class="main_right_nav_buttons_icon_cover_img"
+                            style="background-image: url(/static/img/right-arrow.png)"></button>
+                </div>
+            </div>
+        </div>
+        {% if current_user %}
+            <div class="main_right_nav_export">
+                <div class="main_right_nav_export_cover" style="width: 161px">
+                    <a href="{{ url_for('profile') }}">
+                        <div class="main_right_nav_export_cover_profilePhoto"
+                             style="background-size: cover;width: 70px;height: 75px;border-radius: 50%;background-image: url({{ current_user.photo }})"></div>
+                    </a>
+                </div>
+            </div>
+        {% else %}
+            <div class="main_right_nav_export">
+                <div class="main_right_nav_export_cover">
+                    <a href="{{ url_for('register') }}"><h2 class="main_right_nav_export_cover_signUp">Sign up</h2></a>
+                    <a href="{{ url_for('login') }}">
+                        <button class="main_right_nav_export_cover_around">
+                            <h2 class="main_right_nav_export_cover_around_logIn">Log in</h2>
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <div class="main_right_text">
+        <div class="main_right_text_around">
+            {#    <h1 class="main_right_text_around_listText">Muzofy <b class="main_right_text_around_listText_bold">playlist</b></h1>#}
+            <h1 class="main_right_components_around_listText">Muzofy <b
+                    class="main_right_components_around_listText_bold">playlist</b></h1>
+        </div>
+    </div>
+    <div class="main_right_components">
+        {% for playlist in playlists %}
+
+
+            <a href="{{ url_for('music', playlist_id=playlist.id) }}">
+            <div class="main_right_components_box">
+                <div class="main_right_components_box_lookSmart">
+                    <img class="main_right_components_box_lookSmart_logo" src="../static/img/logoLittle.png" alt="">
+                    <img class="main_right_components_box_lookSmart_play" src="../static/img/play.png" alt="">
+                    <img class="main_right_components_box_lookSmart_img" src="{{ playlist.picture }}" alt="">
+                </div>
+                <div class="main_right_components_box_musicSource">
+                    <div class="main_right_components_box_musicSource_upperCase">
+                        <h4 class="main_right_components_box_musicSource_upperCase_upper">{{ playlist.article }}</h4>
+                    </div>
+                    <div class="main_right_components_box_musicSource_lowerCase">
+                        <h5 class="main_right_components_box_musicSource_lowerCase_lower">{{ playlist.text }}</h5>
+                    </div>
+                </div>
+            </div>
+            </a>
+        {% endfor %}
+
+
+    </div>
+</div>
+</div>
+<script src="../static/js/main.js"></script>
+</body>
+</html>

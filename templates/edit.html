@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="main_right_panel_editPanel">
+    <div class="main_right_panel_editPanel_editText">
+        <h1 class="main_right_panel_editPanel_editText_text">Edit profile</h1>
+    </div>
+    <div class="main_right_panel_editPanel_editAction">
+        <form class="main_right_panel_editPanel_editAction_form" action="{{ url_for('edit') }}" method="post"
+              enctype="multipart/form-data">
+            <input class="main_right_panel_editPanel_editAction_form_input" type="text"
+                   placeholder="Edit gmail" name="gmail" value="{{ current_user.gmail }}">
+            <input class="main_right_panel_editPanel_editAction_form_input" type="text" placeholder="Edit name"
+                   name="name" value="{{ current_user.name }}">
+            <input class="main_right_panel_editPanel_editAction_form_input" type="text"
+                   placeholder="Edit username" name="username" value="{{ current_user.username }}">
+            <input class="main_right_panel_editPanel_editAction_form_input" type="text"
+                   placeholder="Edit password" name="password">
+            <input class="main_right_panel_editPanel_editAction_form_input" type="file"
+                   placeholder="Edit photo" name="photo">
+            <button class="main_right_panel_editPanel_editAction_form_button">Edit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

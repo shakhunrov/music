@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style/login.min.css">
+    <title>Log in</title>
+</head>
+<body>
+<div class="main">
+    <img style="width: 150px; height: 150px" src="../static/img/logo.png" alt="">
+    <h1 class="main_article" style="left: 7em; position: absolute;z-index: 101">Muzofy</h1>
+    <form class="main_form" action="{{ url_for('login') }}" method="post">
+        <h1 class="main_form_sign">Sign in</h1>
+        <h3 style="color: red">{{ error }}</h3>
+        <input class="main_form_input" type="text" placeholder="Enter username" name="username">
+        <input class="main_form_input" type="password" placeholder="Enter password" name="password">
+        <button class="main_form_input">Log in</button>
+        <div class="main_form_variant">
+            <i class="main_form_variant_line"></i>
+            <a class="main_form_variant_check" href="{{ url_for('register') }}"><h4 class="main_form_variant_portal">or
+                Sign up</h4></a>
+            <i class="main_form_variant_line"></i>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

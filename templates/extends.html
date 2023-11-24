@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="website icon" href="../static/img/logo.png">
+    <title>Title</title>
+    {% block style %}
+
+    {% endblock %}
+</head>
+<body>
+<div class="main_left">
+    <div class="main_left_headline">
+        <img class="main_left_headline_logo" src="../static/img/head.png" alt="">
+        <div class="main_left_headline_section">
+            <a href="{{ url_for('main') }}">
+                <button class="main_left_headline_section_home">
+                    <img class="main_left_headline_section_home_icon" src="../static/img/home.png" alt="">
+                    <h3 class="main_left_headline_section_home_source">Home</h3>
+                </button>
+            </a>
+            <a href="{{ url_for('category') }}">
+            <button class="main_left_headline_section_home">
+                <img class="main_left_headline_section_home_icon" src="../static/img/category.png" alt="">
+                <h3 class="main_left_headline_section_home_source">Category</h3>
+            </button>
+                </a>
+            <a href="{{ url_for('search') }}">
+            <button class="main_left_headline_section_home">
+                <img class="main_left_headline_section_home_icon" src="../static/img/search.png" alt="">
+                <h3 class="main_left_headline_section_home_source">Search</h3>
+            </button>
+                </a>
+            <div class="main_left_headline_section_search"></div>
+        </div>
+    </div>
+    <div class="main_left_desk">
+        <a href="{{ url_for('main') }}">
+        <div class="main_left_desk_rows">
+            <button class="main_left_desk_rows_button">
+                <div class="main_left_desk_rows_button_div">
+                    <img class="main_left_desk_rows_button_icon" src="../static/img/playlist.png" alt="">
+                    <h3 class="main_left_desk_rows_button_source">My media</h3>
+                </div>
+            </button>
+        </div>
+            </a>
+        {% if categories %}
+          <div class="main_left_desk_rows category_plus">
+            <button id="id" class="main_left_desk_rows_button">
+                <div class="main_left_desk_rows_button_div">
+                    <img class="main_left_desk_rows_button_icon" src="../static/img/add.png" alt="">
+                    <h3 class="main_left_desk_rows_button_source">Add category</h3>
+                </div>
+            </button>
+        </div>
+        {% endif %}
+
+
+    </div>
+
+</div>
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>

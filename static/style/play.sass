@@ -1,0 +1,539 @@
+*
+  margin: 0
+  top: 0
+  left: 0
+
+body
+  width: 99.7vw
+  height: 100vh
+  display: flex
+  justify-content: space-around
+  align-items: center
+  background-image: linear-gradient(140deg, #5005CA, rgb(61 0 109 / 69%), rgb(101 0 181 / 57%), rgb(3 3 3 / 60%))
+
+.main_left
+  width: 22vw
+  height: 100vh
+  display: flex
+  justify-content: space-around
+  align-items: center
+  flex-direction: column
+  border-radius: 10px
+
+  &_headline
+    width: 22vw
+    height: 300px
+    border-radius: 10px
+    background-image: linear-gradient(0deg, #9D8FEC, #6e5fc9)
+    display: flex
+    justify-content: space-around
+    align-items: start
+    flex-direction: column
+
+    &_logo
+      width: 140px
+      height: 57px
+      margin-top: -3rem
+
+    &_section
+      width: 22vw
+      height: 127px
+      display: flex
+      align-items: start
+      justify-content: space-around
+      flex-direction: column
+      margin-top: -6rem
+
+      &_home
+        width: 170px
+        height: 45px
+        border-radius: 10px
+        display: flex
+        border: none
+        background: none
+        justify-content: space-around
+        align-items: center
+        transition: 0.5s
+        margin-left: 6px
+
+        &_icon
+          width: 23px
+          height: 23px
+
+        &_source
+          cursor: pointer
+          color: #6744CB
+          margin-right: 16px
+          font-family: 'Kameron', sans-serif
+          font-weight: 900
+
+  &_desk
+    width: 22vw
+    height: 590px
+    overflow: hidden
+    border-radius: 10px
+    background-image: linear-gradient(0deg, #9D8FEC, #8173d3)
+
+    &_rows
+      width: 13vw
+      height: 49px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      position: relative
+      &_addImg
+        width: 28px
+        z-index: 2
+        position: absolute
+        height: 28px
+        top: 10px
+        left: 18em
+
+
+      &_button
+        width: 210px
+        height: 40px
+        border-radius: 10px
+        background: none
+        border: none
+        transition: 0.5s
+
+        &_div
+          width: 150px
+          height: 100%
+          display: flex
+          justify-content: space-around
+          align-items: center
+
+        &_icon
+          width: 25px
+          height: 25px
+
+        &_source
+          cursor: pointer
+          letter-spacing: 1.3px
+          color: #6744CB
+          font-family: 'Kameron', sans-serif
+          font-weight: 800
+
+    &_support
+      width: 21vw
+      height: 260px
+      display: flex
+      justify-content: space-around
+      align-items: start
+      flex-direction: column
+
+      &_info
+        color: #6744CB
+        font-weight: 900
+        margin-left: 20px
+        font-family: 'Kameron', sans-serif
+        transition: 0.5s
+
+    &_footer
+      width: 21vw
+      height: 21vh
+      display: flex
+      justify-content: space-around
+      align-items: center
+
+      &_text
+        font-family: 'Kameron', sans-serif
+        cursor: pointer
+        margin-left: 20px
+        color: #6744CB
+
+.main_right
+  width: 76vw
+  height: 98vh
+  background-image: linear-gradient(4deg, #7460EF, #9D8FEC)
+  font-weight: 800
+  border-radius: 10px
+  &_playlistModal
+    width: 100%
+    height: 100%
+    z-index: 7
+    position: absolute
+    backdrop-filter: blur(5px)
+    display: none
+    justify-content: space-around
+    align-items: center
+    &_modal
+      width: 400px
+      height: 400px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      &_form
+        width: 400px
+        height: 400px
+        display: flex
+        border-radius: 10px
+        justify-content: space-around
+        align-items: center
+        flex-direction: column
+        background: #c99fff
+        position: relative
+
+        &_inputs
+          width: 200px
+          height: 40px
+          border-radius: 10px
+          border: 1px #7834b0 solid
+          outline: none
+
+
+
+
+  &_nav
+    width: 76vw
+    height: 100px
+    border-top-left-radius: 10px
+    border-top-right-radius: 10px
+    background: #7D61CE
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+    &_buttons
+      width: 38vw
+      height: 100px
+      border-top-left-radius: 10px
+      display: flex
+      justify-content: start
+      align-items: start
+
+      &_icon
+        width: 13rem
+        height: 5rem
+        display: flex
+        justify-content: space-around
+        align-items: center
+
+        &_cover
+          width: 100px
+          height: 50px
+          display: flex
+          justify-content: space-around
+          align-items: center
+
+
+          &_img
+            width: 40px
+            height: 40px
+            border-radius: 50%
+            border: none
+            background-image: url(/static/img/left-arrow.png)
+            background-size: cover
+
+    &_export
+      width: 38vw
+      height: 100px
+      border-top-right-radius: 10px
+      display: flex
+      justify-content: end
+      align-items: center
+
+      &_cover
+        width: 272px
+        height: 70px
+        display: flex
+        justify-content: space-around
+        align-items: center
+        &_profilePhoto
+          width: 70px
+          height: 75px
+          background-image: url(/static/img/person.png)
+          background-size: cover
+
+        &_signUp
+          font-family: 'Kameron', sans-serif
+          cursor: pointer
+          color: #EAE4EC
+
+        &_around
+          width: 90px
+          height: 40px
+          display: flex
+          justify-content: space-around
+          align-items: center
+          background: #D4CAE1
+          border: none
+          border-radius: 17px
+
+          &_logIn
+            font-family: 'Kameron', sans-serif
+            cursor: pointer
+            color: #573AA9
+
+      &_user
+        width: 40px
+        height: 40px
+
+  &_text
+    width: 76vw
+    height: 55px
+    display: flex
+    justify-content: start
+    align-items: center
+
+  &_components
+    width: 76vw
+    height: 70vh
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+
+    &_box
+      width: 200px
+      height: 240px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      flex-direction: column
+      background: #50439D
+      border-radius: 7px
+      transition: 0.2s
+
+      &_lookSmart
+        width: 189px
+        height: 150px
+        display: flex
+        justify-content: space-around
+        align-items: center
+        position: relative
+        overflow: hidden
+
+        &_play
+          width: 48px
+          height: 48px
+          z-index: 0
+          top: 150px
+          left: 8rem
+          position: absolute
+
+
+        &_logo
+          width: 32px
+          height: 32px
+          z-index: 5
+          top: -40px
+          left: 8px
+          position: absolute
+
+
+        &_img
+          width: 174px
+          height: 115px
+          border-radius: 6px
+          transition: 0.2s
+
+      &_musicSource
+        width: 100px
+        height: 110px
+        display: flex
+        justify-content: space-around
+        align-items: center
+        flex-direction: column
+
+        &_upperCase
+          width: 148px
+          height: 0
+          display: flex
+          justify-content: start
+          align-items: center
+
+          &_upper
+            font-family: 'Kameron', sans-serif
+            cursor: pointer
+            font-size: 22px
+            color: white
+
+        &_lowerCase
+          width: 148px
+          height: 60px
+          display: flex
+          text-align: center
+          justify-content: space-around
+          align-items: center
+
+          &_lower
+            font-family: 'Kameron', sans-serif
+            cursor: pointer
+            color: white
+
+    &_around
+      width: 23vw
+      height: 55px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      padding: 10px 10px 10px 10px
+
+      &_listText
+        font-family: "My Soul"
+        cursor: pointer
+        color: white
+        margin-left: 35px
+        font-weight: 1
+
+        &_bold
+          font-family: 'Kameron', sans-serif
+          cursor: pointer
+          color: white
+
+    &_box:hover
+      width: 200px
+      height: 240px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      flex-direction: column
+      background: #4f349b
+      border-radius: 7px
+
+    &_box:hover .main_right_components_box_lookSmart_play
+      width: 48px
+      height: 48px
+      z-index: 5
+      top: 70px
+      left: 8rem
+      position: absolute
+
+    &_box:hover .main_right_components_box_lookSmart_logo
+      width: 32px
+      height: 32px
+      z-index: 5
+      top: 12px
+      left: 8px
+      position: absolute
+    &_box:hover .main_right_components_box_lookSmart_img
+      width: 174px
+      height: 115px
+      border-radius: 6px
+      filter: brightness(50%)
+    &_box:hover .main_right_components_box_musicSource_lowerCase_lower
+      text-shadow: 1px 1px gray
+    &_box:hover .main_right_components_box_musicSource_upperCase_upper
+      text-shadow: 1px 1px gray
+
+
+
+
+.main_left_headline_section_home:hover
+  background: rgba(194, 169, 225, 0.75)
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25)
+  transition: 0.5s
+
+.main_left_desk_rows_button:hover
+  background: rgba(194, 169, 225, 0.75)
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25)
+  transition: 0.5s
+
+.main_left_desk_support_info:hover
+  color: #D1D1D1
+  transition: 0.5s
+  text-shadow: 2px 2px 7px #000e23
+
+a
+  text-decoration: none
+
+.anotherFolder
+  width: 23vw
+  height: 0
+  display: flex
+  overflow: hidden
+  border: 0.3px #6744CB solid
+  justify-content: space-around
+  align-items: center
+  flex-direction: column
+  transition: 0.5s
+  margin-top: 10px
+
+
+
+.flex_s
+  display: flex
+  height: 30%
+
+
+.deg_s
+  height: 0
+  background: red
+  transform: rotate(180deg)
+
+.modalMusic2_form2_input2
+  width: 200px
+  height: 30px
+  border: none
+  outline: none
+  background: #6e5fc9
+  color: white
+  border-radius: 5px
+  font-family: Kameron, sans-serif
+  &::placeholder
+    color: white
+
+
+.load
+  position: absolute
+  width: 100vw
+  height: 100vh
+  z-index: 99
+  background: #6e5fc9
+  display: flex
+  justify-content: space-around
+  align-items: center
+.iomg
+  width: 300px
+  height: 300px
+  margin-left: -103px
+  margin-top: -100px
+
+
+#loader
+  position: absolute
+  left: 41%
+  top: 40%
+  z-index: 1
+  width: 400px
+  height: 300px
+  display: flex
+  justify-content: space-around
+  align-items: center
+  flex-direction: column
+  -webkit-animation: spin 2s linear infinite
+  animation: spin 2s linear infinite
+
+
+.spinner
+  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255))
+  width: 200px
+  height: 200px
+  animation: spinning82341 1.7s linear infinite
+  text-align: center
+  border-radius: 50%
+  filter: blur(1px)
+  margin-top: -222px
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255)
+
+
+.spinner1
+  background-color: rgb(36, 36, 36)
+  width: 200px
+  height: 200px
+  border-radius: 50%
+  filter: blur(10px)
+
+
+
+@keyframes spinning82341
+  to
+    transform: rotate(360deg)
+
+.spinner-text
+  font-size: 40px
+  font-weight: 900
+  color: rgb(0, 225, 255)
+  text-shadow:  1px 1px rgb(186, 66, 255), 1px 1px rgb(0, 225, 255)

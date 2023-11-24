@@ -1,0 +1,575 @@
+*
+  margin: 0
+  top: 0
+  left: 0
+
+body
+  width: 98.7vw
+  height: 100vh
+  display: flex
+  justify-content: space-around
+  align-items: center
+  background-image: linear-gradient(140deg, #5005CA, rgb(61 0 109 / 69%), rgb(101 0 181 / 57%), rgb(3 3 3 / 60%))
+
+.main_left
+  width: 22vw
+  height: 100vh
+  display: flex
+  justify-content: space-around
+  align-items: center
+  flex-direction: column
+  border-radius: 10px
+
+  &_headline
+    width: 22vw
+    height: 300px
+    border-radius: 10px
+    background-image: linear-gradient(0deg, #9D8FEC, #6e5fc9)
+    display: flex
+    justify-content: space-around
+    align-items: start
+    flex-direction: column
+
+    &_logo
+      width: 140px
+      height: 57px
+      margin-top: -3rem
+
+    &_section
+      width: 22vw
+      height: 127px
+      display: flex
+      align-items: start
+      justify-content: space-around
+      flex-direction: column
+      margin-top: -6rem
+
+      &_home
+        width: 170px
+        height: 45px
+        border-radius: 10px
+        display: flex
+        border: none
+        background: none
+        justify-content: space-around
+        align-items: center
+        transition: 0.5s
+        margin-left: 6px
+
+        &_icon
+          width: 23px
+          height: 23px
+
+        &_source
+          cursor: pointer
+          //letter-spacing: 1.3px
+          //margin-top: 9px
+          color: #6744CB
+          margin-right: 16px
+          font-family: 'Kameron', sans-serif
+          font-weight: 900
+
+  &_desk
+    width: 22vw
+    height: 590px
+    overflow: hidden
+    border-radius: 10px
+    background-image: linear-gradient(0deg, #9D8FEC, #8173d3)
+
+
+    &_rows
+      width: 13vw
+      height: 49px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      position: relative
+      &_addImg
+        width: 28px
+        z-index: 2
+        position: absolute
+        height: 28px
+        top: 10px
+        left: 18em
+
+
+      &_button
+        width: 210px
+        height: 40px
+        border-radius: 10px
+        background: none
+        border: none
+        transition: 0.5s
+
+        &_div
+          width: 150px
+          height: 100%
+          display: flex
+          justify-content: space-around
+          align-items: center
+
+        &_icon
+          width: 25px
+          height: 25px
+
+        &_source
+          cursor: pointer
+          letter-spacing: 0.7px
+          color: #6744CB
+          font-family: 'Kameron', sans-serif
+          font-weight: 800
+
+    &_support
+      width: 21vw
+      height: 260px
+      display: flex
+      justify-content: space-around
+      align-items: start
+      flex-direction: column
+
+      &_info
+        color: #6744CB
+        font-weight: 900
+        margin-left: 20px
+        font-family: 'Kameron', sans-serif
+        transition: 0.5s
+
+    &_footer
+      width: 21vw
+      height: 21vh
+      display: flex
+      justify-content: space-around
+      align-items: center
+
+      &_text
+        font-family: 'Kameron', sans-serif
+        cursor: pointer
+        margin-left: 20px
+        color: #6744CB
+
+.main_right
+  width: 76vw
+  height: 98vh
+  background-image: linear-gradient(4deg, #7460EF, #9D8FEC)
+  font-weight: 800
+  border-radius: 10px
+  &_playlistModal
+    width: 100%
+    height: 100%
+    z-index: 7
+    position: absolute
+    backdrop-filter: blur(5px)
+    display: none
+    justify-content: space-around
+    align-items: center
+    &_modal
+      width: 400px
+      height: 400px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      &_form
+        width: 400px
+        height: 400px
+        display: flex
+        border-radius: 10px
+        justify-content: space-around
+        align-items: center
+        flex-direction: column
+        background: #c99fff
+        position: relative
+
+        &_inputs
+          width: 200px
+          height: 40px
+          border-radius: 10px
+          border: 1px #7834b0 solid
+          outline: none
+
+        &_inputs::placeholder
+          color: gray
+
+
+
+  &_nav
+    width: 76vw
+    height: 100px
+    border-top-left-radius: 10px
+    border-top-right-radius: 10px
+    background: #7D61CE
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+    &_buttons
+      width: 38vw
+      height: 100px
+      border-top-left-radius: 10px
+      display: flex
+      justify-content: start
+      align-items: start
+
+      &_icon
+        width: 13rem
+        height: 5rem
+        display: flex
+        justify-content: space-around
+        align-items: center
+
+        &_cover
+          width: 100px
+          height: 50px
+          display: flex
+          justify-content: space-around
+          align-items: center
+
+
+          &_img
+            width: 40px
+            height: 40px
+            border-radius: 50%
+            border: none
+            background-image: url(/static/img/left-arrow.png)
+            background-size: cover
+
+    &_export
+      width: 38vw
+      height: 100px
+      border-top-right-radius: 10px
+      display: flex
+      justify-content: end
+      align-items: center
+
+      &_cover
+        width: 272px
+        height: 70px
+        display: flex
+        justify-content: space-around
+        align-items: center
+        &_profilePhoto
+          width: 70px
+          height: 75px
+          background-image: url(/static/img/person.png)
+          background-size: cover
+
+        &_signUp
+          font-family: 'Kameron', sans-serif
+          cursor: pointer
+          color: #EAE4EC
+
+        &_around
+          width: 90px
+          height: 40px
+          display: flex
+          justify-content: space-around
+          align-items: center
+          background: #D4CAE1
+          border: none
+          border-radius: 17px
+
+          &_logIn
+            font-family: 'Kameron', sans-serif
+            cursor: pointer
+            color: #573AA9
+
+      &_user
+        width: 40px
+        height: 40px
+
+  &_text
+    width: 76vw
+    height: 55px
+    display: flex
+    justify-content: start
+    align-items: center
+
+  &_components
+    width: 76vw
+    height: 81vh
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    position: relative
+
+    &_box
+      width: 200px
+      height: 209px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      position: relative
+      flex-direction: column
+      border-radius: 7px
+      transition: 0.2s
+      overflow: hidden
+
+
+      &_lookSmart
+        width: 189px
+        height: 150px
+        display: flex
+        justify-content: end
+        align-items: center
+        position: relative
+        overflow: hidden
+        margin-left: 40px
+        margin-top: 30px
+
+        &_play
+          width: 48px
+          height: 48px
+          z-index: 0
+          top: 150px
+          left: 8rem
+          position: absolute
+
+
+        &_logo
+          width: 32px
+          height: 32px
+          z-index: 5
+          top: -40px
+          left: 8px
+          position: absolute
+
+
+        &_img
+          width: 100px
+          height: 120px
+          border-radius: 6px
+          transition: 0.2s
+          margin-left: -30px
+          margin-top: 57px
+
+      &_musicSource
+        width: 100px
+        height: 110px
+        display: flex
+        justify-content: end
+        align-items: center
+        flex-direction: column
+
+        &_upperCase
+          width: 148px
+          height: 0
+          display: flex
+          justify-content: start
+          align-items: center
+
+          &_upper
+            font-family: 'Kameron', sans-serif
+            cursor: pointer
+            font-size: 22px
+            color: white
+
+        &_lowerCase
+          width: 148px
+          height: 60px
+          display: flex
+          text-align: center
+          justify-content: space-around
+          align-items: center
+
+          &_lower
+            font-family: 'Kameron', sans-serif
+            cursor: pointer
+            color: white
+
+    &_around
+      width: 23vw
+      height: 55px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      padding: 10px 10px 10px 10px
+
+      &_listText
+        font-family: "My Soul"
+        cursor: pointer
+        color: white
+        margin-left: 35px
+        font-weight: 1
+
+        &_bold
+          font-family: 'Kameron', sans-serif
+          cursor: pointer
+          color: white
+
+    //&_box:hover
+    //  width: 200px
+    //  height: 240px
+    //  display: flex
+    //  justify-content: space-around
+    //  align-items: center
+    //  flex-direction: column
+    //  background: #4f349b
+    //  border-radius: 7px
+    //
+    //&_box:hover .main_right_components_box_lookSmart_play
+    //  width: 48px
+    //  height: 48px
+    //  z-index: 5
+    //  top: 70px
+    //  left: 8rem
+    //  position: absolute
+    //
+    //&_box:hover .main_right_components_box_lookSmart_logo
+    //  width: 32px
+    //  height: 32px
+    //  z-index: 5
+    //  top: 12px
+    //  left: 8px
+    //  position: absolute
+    //&_box:hover .main_right_components_box_lookSmart_img
+    //  width: 70px
+    //  height: 115px
+    //  border-radius: 6px
+    //  filter: brightness(50%)
+    //&_box:hover .main_right_components_box_musicSource_lowerCase_lower
+    //  text-shadow: 1px 1px gray
+    //&_box:hover .main_right_components_box_musicSource_upperCase_upper
+    //  text-shadow: 1px 1px gray
+
+
+
+
+.main_left_headline_section_home:hover
+  background: rgba(194, 169, 225, 0.75)
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25)
+  transition: 0.5s
+
+.main_left_desk_rows_button:hover
+  background: rgba(194, 169, 225, 0.75)
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25)
+  transition: 0.5s
+
+.main_left_desk_support_info:hover
+  color: #D1D1D1
+  transition: 0.5s
+  text-shadow: 2px 2px 7px #000e23
+
+a
+  text-decoration: none
+
+.anotherFolder
+  width: 23vw
+  height: 0
+  display: flex
+  overflow: hidden
+  border: 0.3px #6744CB solid
+  justify-content: space-around
+  align-items: center
+  flex-direction: column
+  transition: 0.5s
+  margin-top: 10px
+
+
+
+.flex_s
+  display: flex
+  height: 30%
+
+
+.deg_s
+  height: 0
+  background: red
+  transform: rotate(180deg)
+
+.rightElem
+  width: 130px
+  height: 100px
+  padding: 10px 10px 10px 10px
+  display: none
+  justify-content: space-around
+  align-items: center
+  flex-direction: column
+  position: absolute
+  border-radius: 10px
+  z-index: 99
+  background: #7834b0
+
+
+.deleteCategory
+  width: 130px
+  height: 40px
+  border-radius: 10px
+  border: none
+  z-index: 5
+  color: white
+  font-family: Kameron,sans-serif
+  font-weight: 900
+  transition: 1s
+  background: #000e23
+
+.cancelCategrory
+  width: 130px
+  height: 40px
+  border-radius: 10px
+  border: none
+  color: white
+  z-index: 5
+  font-family: Kameron,sans-serif
+  font-weight: 900
+  transition: 1s
+  background: #344c47
+
+.deleteCategory:hover
+  background: #ff0404
+
+
+.alert
+  width: 100vw
+  height: 100vh
+  position: absolute
+  background: rgba(255, 255, 255, 0.43)
+  backdrop-filter: blur(7px)
+  z-index: 20
+  left: -420px
+  top: -166px
+  display: none
+  justify-content: space-around
+  align-items: center
+  &_div
+    width: 440px
+    height: 230px
+    display: flex
+    justify-content: space-around
+    align-items: center
+    border-radius: 13px
+    flex-direction: column
+    background: #9D8FEC
+    &_variat
+      width: 200px
+      height: 70px
+      display: flex
+      margin-left: 10pc
+      justify-content: space-around
+      align-items: center
+#yes
+  border: none
+  background: #53BE6B
+  text-align: center
+  color: white
+  font-weight: 900
+  font-family: 'Kameron',sans-serif
+  width: 90px
+  height: 40px
+  border-radius: 10px
+
+#no
+  border: none
+  background: #FF0404
+  text-align: center
+  color: white
+  font-weight: 900
+  font-family: 'Kameron',sans-serif
+  width: 90px
+  height: 40px
+  border-radius: 10px
+
+.kota
+  width: 100%
+  height: 100%
+  z-index: 1000
+  background: #000e23
+
